@@ -86,10 +86,11 @@ $ docker container run -it -v vdata:/vdata -name vdatavolume ubuntu /bin/bash
 ```
 
 ### 从数据卷容器中挂载数据卷
-使用`--volumes-from`
+使用`--volumes-from`  
 ```sh
 $ docekr container run -it --volumes-from vdatavolume --name qniu1 ubuntu /bin/bash
 ```
+这里不管数据卷容器的状态是Up还是Stop都是可以从它挂载数据卷的
 
 ### 数据备份
 数据存在数据卷中，如果我们想要备份它，可以采用备份容器的方式
